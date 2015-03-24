@@ -34,7 +34,12 @@ public class WebpageConverterServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String url=request.getParameter(")
+		String inputURL=request.getParameter("inputURL");
+		
+		//run libary with inputURL to get result
+		
+		
+		
 	}
 
 }
