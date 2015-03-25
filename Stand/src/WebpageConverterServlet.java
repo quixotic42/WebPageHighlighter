@@ -2,6 +2,7 @@
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,19 +40,12 @@ public class WebpageConverterServlet extends HttpServlet {
 		String inputURL=request.getParameter("inputURL");
 		
 		// Run libary with inputURL to get result
-		ArticleSearchRunner.runArticleSearch(inputURL);
+		String outputHTML = ArticleSearchRunner.runArticleSearch(inputURL);
 		
-		//forward to the view
-		
-/*		String outputUrl="example.html";
-		
-		String destinationUrl = "/output.jsp";*/
-		
-		//FIXME: Put reference to html output
-//		request.setAttribute("output", outputUrl);
-//        getServletContext()
-//                .getRequestDispatcher(destinationUrl)
-//                .forward(request, response);
+		//FIXME: Put outputURL to html output		
+		request.setAttribute("outputHTML", outputHTML);
+		RequestDispatcher RequetsDispatcherObj = request.getRequestDispatcher("/OutputFile.jsp");
+		RequetsDispatcherObj.forward(request, response);
 		}
 	
 }
