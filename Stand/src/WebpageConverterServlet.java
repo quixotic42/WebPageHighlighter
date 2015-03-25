@@ -41,11 +41,9 @@ public class WebpageConverterServlet extends HttpServlet {
 		// forward to the view
 		
 		String outputUrl="/example.html";
-				
+		//Put reference to html output
         getServletContext()
                 .getRequestDispatcher(outputUrl)
                 .forward(request, response);
-		
 	}
-
 }
