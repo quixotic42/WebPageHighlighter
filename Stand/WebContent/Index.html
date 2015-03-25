@@ -2,19 +2,36 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Article Highlighter</title>
-        <link rel="stylesheet" href="styles/main.css">
-    </head>
+        <title>Article Highlighter</title>	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>    
+</head>
     <body>
-        <form action="WebpageConverterServlet" method="post">
-            <h1>Article Highlighter</h1>
-        
-            <h2>by Team S.T.A.N.D.</h2>
-            
-            <label class="pad_top">Type your URL in here:</label>
-            <input type="text" name="inputURL" required><br>
-         
-            <input type="submit" value="Submit">
-        </form>
+		<div class="container">
+	    	<div class="page-header">
+			  <h1>Article Highlighter<small> by Team S.T.A.N.D.</small></h1>
+			</div>
+			<div class="jumbotron">
+			    <div class="row">
+		        	<div class="col-md-6 col-md-offset-3">
+				        <form action="WebpageConverterServlet" method="post" class="horizontal">
+				          <div class="form-group">
+				                <label >Let's highight an article!</label>
+							    <input type="url" class="form-control" name="inputURL" required placeholder="http://...">
+				          </div>
+						  <button type="submit" class="btn btn-default btn-lg">
+							  <span class="glyphicon glyphicon-glass" aria-hidden="true"></span> Cheers!
+						  </button>
+				        </form>
+					</div>
+		        </div>
+	        </div>
+	    </div>
     </body>
 </html>
