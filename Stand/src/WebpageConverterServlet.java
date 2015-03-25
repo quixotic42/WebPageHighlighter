@@ -19,7 +19,6 @@ public class WebpageConverterServlet extends HttpServlet {
      */
     public WebpageConverterServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -36,12 +35,12 @@ public class WebpageConverterServlet extends HttpServlet {
 		
 		String inputURL=request.getParameter("inputURL");
 		
-		//run libary with inputURL to get result
+		//FIXME: run libary with inputURL to get result
 		
-		// forward to the view
+		//forward to the view
 		
 		String outputUrl="/example.html";
-		//Put reference to html output
+		//FIXME: Put reference to html output
         getServletContext()
                 .getRequestDispatcher(outputUrl)
                 .forward(request, response);
