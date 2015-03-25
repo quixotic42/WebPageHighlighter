@@ -1,11 +1,14 @@
 
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import team.misc.*;
 
 /**
  * Servlet implementation class WebpageConverterServlet
@@ -32,20 +35,23 @@ public class WebpageConverterServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// Set string to user's input URL
 		String inputURL=request.getParameter("inputURL");
 		
-		// FIXME: run libary with inputURL to get result
+		// Run libary with inputURL to get result
+		ArticleSearchRunner.runArticleSearch(inputURL);
+		
 		//forward to the view
 		
-		String outputUrl="example.html";
+/*		String outputUrl="example.html";
 		
-		String destinationUrl = "/output.jsp";
+		String destinationUrl = "/output.jsp";*/
 		
 		//FIXME: Put reference to html output
-		request.setAttribute("output", outputUrl);
-        getServletContext()
-                .getRequestDispatcher(destinationUrl)
-                .forward(request, response);
+//		request.setAttribute("output", outputUrl);
+//        getServletContext()
+//                .getRequestDispatcher(destinationUrl)
+//                .forward(request, response);
 		}
 	
 }
